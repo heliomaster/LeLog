@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+<<<<<<< HEAD
 from LogBook import views
+=======
+
+>>>>>>> airportcode
 
 
 
 urlpatterns = [
+    url(r'^LogBook/', include('LogBook.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.get_name, name='get_name'),
+
 ]
