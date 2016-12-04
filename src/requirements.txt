@@ -1,0 +1,9 @@
+beautifulsoup4==4.5.1
+Django==1.10.2
+django-adaptors==0.2.5
+django-tables2==1.2.6
+django-webtest==1.8.0
+six==1.10.0
+waitress==1.0.1
+WebOb==1.6.3
+WebTest==2.0.23
