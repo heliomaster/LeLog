@@ -1,8 +1,15 @@
-{% extends "base.html" %}
 
-{% block content %}
-{% for post in posts %}
-{{posts}}
-{% endfor %}
 
-{% endblock content %}
+
+
+<h1> {{title}} </h1>
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Insert"  >
+</form>
+
+
+
+

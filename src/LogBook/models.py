@@ -2,19 +2,24 @@ from django.db import models
 
 
 class Logfields(models.Model):
+    # spell class field properly in admin
+    class Meta:
+        verbose_name_plural = "LogFields"
+    # TODO modif time fields en integer field
     Date_field = models.DateTimeField()
-
     off_block_time = models.TimeField()
     take_off_time = models.TimeField()
-    land_time = models.TimeField
+    land_time = models.TimeField()
     on_block_time = models.TimeField()
     tot_time_field = models.TimeField()
-
     pic_field = models.CharField(max_length=50)
     fo_field = models.CharField(max_length=50)
 # related_name: for foreignkey
     dep_field = models.ForeignKey('MycsvModel', on_delete=models.CASCADE, related_name="dep_field")
     arrival_field = models.ForeignKey('MycsvModel', on_delete=models.CASCADE, related_name="arrival_field")
+
+    def __str__(self):
+        return str(self.Date_field)
 
 
 class MycsvModel(models.Model):
@@ -31,7 +36,6 @@ class MycsvModel(models.Model):
     gps_code = models.CharField(max_length=200, null=True, blank=True)
     iata_code = models.CharField(max_length=200, null=True, blank=True)
     local_code = models.CharField(max_length=200, null=True, blank=True)
-
 
     Day_or_Night = (
         ("D", "Day"),
